@@ -1,0 +1,24 @@
+{% extends "obwody/base.html" %}
+
+{% block breadcrumbs %}
+		<center>
+			<a href="../../../">Strona główna</a> / <a href="../../">{{ wojew.nazwa }}</a> / 
+			<a href="../">{{ powi.nazwa }}</a> / {{ gmi.nazwa }}
+			<br>
+		</center>
+{% endblock %}
+{% block title %} - obwody{% endblock %}
+{% block description %}Wybierz obwód do edycji.{% endblock %}
+{% block addcolumns %}
+	<td class="firstrow">Liczba uprawnionych do głosowania</td>
+	<td class="firstrow">Liczba wydanych kart do głosowania</td>
+{% endblock %}
+{% block link %}{{ query.nazwa }}{% endblock %}
+{% block addinput %}
+	<td class="right">{{ query.uprawnionych_do_glosowania }}</td>
+	<td class="right">{{ query.wydano_kart }}</td>
+{% endblock %}
+{% block buttons %}
+	{% block editbutton %}<a href="{{ query.id }}"><button>Edytuj</button></a>{% endblock %}
+{% endblock %}
+{% block noquery %}Nie ma obwodów!{% endblock %}

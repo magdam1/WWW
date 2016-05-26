@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>Edytor obwodów{% block title %}{% endblock %}</title>
+	<link href="{% static "obwody/style.css" %}" rel="stylesheet" type="text/css">
+	{% block jscript %}{% endblock %}
+</head>
+<body>
+	<div class="container">
+		{% block breadcrumbs %}{% endblock %}
+		<h1>{% block description %}{% endblock %}</h1>
+		{% block err %}{% endblock %}
+		{% if query_list %}
+			{% block content %}
+				<div class="paratable">
+					{% for query in query_list %}
+						<a class="nolink" href="{{ query.id }}">
+							<div class="input">
+								{{ query.nazwa }}
+							</div>
+						</a>
+					{% endfor %}
+				</div>
+			{% endblock %}
+		{% else %}
+			<h1>{% block noquery %}{% endblock %}</h1>
+		{% endif %}
+	</div>
+</body>
+</html>

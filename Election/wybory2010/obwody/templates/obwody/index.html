@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8' />
+	<title>Obwodziątka</title>
+</head>
+<body>
+	<center>
+		<br><b> Witaj!<br> Wybierz województwo. </b><br><br>
+		{% if woj_list %}
+			{% for woj in woj_list %}
+				<a href="{{ woj.nazwa }}">{{ woj.nazwa }}</a>
+				<br>
+			{% endfor %}
+		{% else %}
+			<p>Nie ma województw!</p>
+		{% endif %}
+	</center>
+</body>
+</html>

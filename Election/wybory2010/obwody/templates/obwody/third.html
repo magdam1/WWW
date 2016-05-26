@@ -1,0 +1,10 @@
+{% extends "obwody/base.html" %}
+
+{% block breadcrumbs %}
+	<div class="breadcrumbs">
+		<a href="../../">Strona główna</a> / <a href="../">{{ wojew.nazwa }}</a> / {{ powi.nazwa }} 
+	</div>
+{% endblock %}
+{% block title %} - wybór gminy lub miasta{% endblock %}
+{% block description %}Wybierz gminę lub miasto.{% endblock %}
+{% block noquery %}Nie ma gmin ani miast!{% endblock %}

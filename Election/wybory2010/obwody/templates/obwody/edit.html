@@ -1,0 +1,47 @@
+{% extends "obwody/base.html" %}
+{% load staticfiles %}
+
+{% block breadcrumbs %}
+	<div class="breadcrumbs">
+		<a href="../../../">Strona główna</a> / <a href="../../">{{ wojew.nazwa }}</a> / 
+		<a href="../">{{ powi.nazwa }}</a> / {{ gmi.nazwa }}
+	</div>
+{% endblock %}
+{% block jscript %}
+	<script src="{% static "obwody/jquery-1.11.3.min.js" %}"></script>
+	<script src="{% static "obwody/jquery-migrate-1.2.1.min.js" %}"></script>
+	<script src="{% static "obwody/main.js" %}"></script>
+{% endblock %}
+{% block description %}Wprowadź odpowiednie wartości i zatwierdź.{% endblock %}
+{% block err %}
+	<div class="err invisible" id="error_div">
+		Uwaga! Dane zostały zmienione od ostatniego odczytu.
+	</div>
+{% endblock %}
+{% block content %}
+	<table>
+		<tr>
+			<td class="firstrow">Nazwa</td>
+			<td class="firstrow">Liczba uprawnionych do głosowania</td>
+			<td class="firstrow">Liczba wydanych kart do głosowania</td>
+			<td class="hidden">Licznik</td>
+			<td class="firstrow">Edycja</td>
+		</tr>
+		<form action="/create_post"/ method="POST" id="post-form">
+			{% csrf_token %}
+			{% for obwod in query_list %}
+				<tr id="tr_{{ obwod.0 }}">
+					<td>{{ obwod.1 }}</td>
+					<td class="form" id="td_{{ obwod.0 }}_głosy">{{ obwod.2 }}</td>
+					<td class="form" id="td_{{ obwod.0 }}_karty">{{ obwod.3 }}</td>
+					<td class="hidden" id="td_{{ obwod.0 }}_licznik">{{ obwod.4 }}</td>
+					<td class="form buttons">
+						<button id="edytuj_{{ obwod.0 }}" onclick="onclick_edit({{ obwod.0 }})">Edytuj</button>
+						<button id="zapisz_{{ obwod.0 }}" class="invisible" onclick="onclick_accept({{ obwod.0 }})">Zapisz</button>
+						<button id="anuluj_{{ obwod.0 }}" class="invisible" onclick="onclick_cancel({{ obwod.0 }})">Anuluj</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</form>
+	<table>
+{% endblock %}

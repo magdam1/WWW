@@ -1,0 +1,127 @@
+.container {
+	width: 75%;
+	padding: 20px;
+	margin: 0 auto;
+	text-align: center;
+	border-radius: 20px;
+	background-color: #8AB8E6;
+	padding-bottom: 50px; 
+}
+
+.err, .breadcrumbs, .input {
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin: 20px auto;
+	border-radius: 20px;
+	color: white;
+	font-weight: bold;
+}
+
+.breadcrumbs {
+	max-width: 50%; 
+	font-size: 18px;
+	background-color: #005C5C;
+}
+
+.err {
+	font-size: 20px;
+	border-radius: 0px;
+	background-color: red;
+}
+
+.paratable {
+	margin: 0 auto;
+	width: 75%;
+}
+
+.input {
+	margin: 10px auto;
+	background-color: #660033;
+	max-width: 40%;
+}
+
+.input:hover {
+	background-color: #CC0066;
+}
+
+table {
+	margin: 0 auto;
+	max-width: 90%;
+	border-spacing: 3px;
+}
+
+td {
+	padding: 15px;
+	background-color: white;
+}
+
+button {
+	height: 30px;
+	width: 80px;
+	margin-top: 5px;
+	margin-bottom: 5px;
+	background-color: #000047;
+	border: none;
+	color: white;
+	font-weight: bold;
+	border-radius: 10px;
+	box-shadow: none;
+	display: inline-block;
+}
+
+.invisible {
+	display: none;
+}
+
+button:hover {
+	background-color: #003399;
+	border: none;
+}
+
+.firstrow {
+	text-align: center;
+	color: white;
+	font-weight: bold;
+	background-color: #0066FF;
+}
+
+.hidden {
+	display: none;
+}
+
+.right {
+	text-align: right;
+}
+
+.form {
+	text-align: center;
+	font-size: 15px;
+}
+
+.red td {
+	background-color: red;
+	color: white;
+}
+
+.buttons {
+	width: 100px;
+	height: 80px;
+}
+
+a, a:visited {
+	text-decoration: none;
+	color: #00FFFF;
+}
+
+a:hover {
+	color: #FF0000;
+}
+
+a.nolink {
+	color: white;
+}
+
+h1 {
+	padding: 15px;
+	font-size: 20px;
+}
